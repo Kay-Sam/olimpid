@@ -148,24 +148,7 @@
     });
 
   });
-  document.getElementById("whatsappForm").addEventListener("submit", function(e){
-    e.preventDefault(); // prevent default form submission
-
-    const fullName = encodeURIComponent(document.getElementById("fullName").value);
-    const email = encodeURIComponent(document.getElementById("email").value);
-    const phone = encodeURIComponent(document.getElementById("phone").value);
-    const country = encodeURIComponent(document.getElementById("country").value);
-    const program = encodeURIComponent(document.getElementById("program").value);
-    const additional = encodeURIComponent(document.getElementById("message").value);
-
-    // Your WhatsApp number with country code (no +)
-    const whatsappNumber = "2348158560940";
-
-    const text = `Hello Olimpid,%0A%0AMy details for study abroad application:%0A- Name: ${fullName}%0A- Email: ${email}%0A- Phone: ${phone}%0A- Destination: ${country}%0A- Program: ${program}%0A- Additional Info: ${additional}`;
-
-    // Open WhatsApp
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-});
+  
 
   /**
    * Frequently Asked Questions Toggle
@@ -186,9 +169,10 @@ function closeVideo() {
   document.getElementById("videoModal").style.display = "none";
   document.getElementById("aboutVideo").src = "";
 }
- const heroSection = document.querySelector(".hero");
-  const whatsappBtn = document.getElementById("whatsappBtn");
+const heroSection = document.querySelector(".hero");
+const whatsappBtn = document.getElementById("whatsappBtn");
 
+if (heroSection && whatsappBtn) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -203,8 +187,39 @@ function closeVideo() {
   );
 
   observer.observe(heroSection);
+}
 
   
 
 })();
 
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("whatsappForm");
+  if (!form) return; // VERY IMPORTANT
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const country = document.getElementById("country").value;
+    const program = document.getElementById("program").value;
+    const additional = document.getElementById("message").value.trim();
+
+    const text = `Hello Olimpid,
+
+Full Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Destination: ${country}
+Program: ${program}
+Additional Info: ${additional}`;
+
+    const url = `https://wa.me/2348158560940?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+  });
+
+});
