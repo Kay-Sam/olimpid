@@ -159,16 +159,7 @@
     });
   });
 
-function openVideo() {
-  document.getElementById("videoModal").style.display = "flex";
-  document.getElementById("aboutVideo").src =
-    "https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1";
-}
 
-function closeVideo() {
-  document.getElementById("videoModal").style.display = "none";
-  document.getElementById("aboutVideo").src = "";
-}
 const heroSection = document.querySelector(".hero");
 const whatsappBtn = document.getElementById("whatsappBtn");
 
