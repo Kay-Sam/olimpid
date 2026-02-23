@@ -148,6 +148,24 @@
     });
 
   });
+  document.getElementById("whatsappForm").addEventListener("submit", function(e){
+    e.preventDefault(); // prevent default form submission
+
+    const fullName = encodeURIComponent(document.getElementById("fullName").value);
+    const email = encodeURIComponent(document.getElementById("email").value);
+    const phone = encodeURIComponent(document.getElementById("phone").value);
+    const country = encodeURIComponent(document.getElementById("country").value);
+    const program = encodeURIComponent(document.getElementById("program").value);
+    const additional = encodeURIComponent(document.getElementById("message").value);
+
+    // Your WhatsApp number with country code (no +)
+    const whatsappNumber = "2348158560940";
+
+    const text = `Hello Olimpid,%0A%0AMy details for study abroad application:%0A- Name: ${fullName}%0A- Email: ${email}%0A- Phone: ${phone}%0A- Destination: ${country}%0A- Program: ${program}%0A- Additional Info: ${additional}`;
+
+    // Open WhatsApp
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
+});
 
   /**
    * Frequently Asked Questions Toggle
@@ -186,23 +204,7 @@ function closeVideo() {
 
   observer.observe(heroSection);
 
-  document.getElementById("whatsappForm").addEventListener("submit", function(e){
-    e.preventDefault(); // prevent default form submission
-
-    const fullName = encodeURIComponent(document.getElementById("fullName").value);
-    const email = encodeURIComponent(document.getElementById("email").value);
-    const phone = encodeURIComponent(document.getElementById("phone").value);
-    const country = encodeURIComponent(document.getElementById("country").value);
-    const program = encodeURIComponent(document.getElementById("program").value);
-    const additional = encodeURIComponent(document.getElementById("message").value);
-
-    // Your WhatsApp number with country code (no +)
-    const whatsappNumber = "2348158560940";
-
-    const text = `Hello Olimpid,%0A%0AMy details for study abroad application:%0A- Name: ${fullName}%0A- Email: ${email}%0A- Phone: ${phone}%0A- Destination: ${country}%0A- Program: ${program}%0A- Additional Info: ${additional}`;
-
-    // Open WhatsApp
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-});
+  
 
 })();
+
