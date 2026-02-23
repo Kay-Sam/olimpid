@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const program = document.getElementById("program").value;
     const additional = document.getElementById("message").value.trim();
 
-    const text = `Hello Olimpid,
+    const text = `Hello Olimpid, These are my details from the website:
 
 Full Name: ${fullName}
 Email: ${email}
