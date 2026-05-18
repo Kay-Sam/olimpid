@@ -376,18 +376,30 @@
     </div>
 
   </footer>
+<div id="videoModal" class="video-modal">
+  <div class="video-content">
+    <span class="close-btn" onclick="closeVideo()">
+      <i class="fa-solid fa-xmark"></i>
+    </span>
 
+    <video id="aboutVideo" controls>
+      <source src="assets/video/olimpid video 1.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
   <!-- floating whatsapp -->
    <a href="https://wa.me/2348158560940?text=Hello%20Olimpid,%20I%20would%20like%20to%20book%20a%20consultation%20about%20studying%20abroad." 
    class="floating-whatsapp" 
-   id="whatsappBt"
+   id="whatsappBtn"
    target="_blank">
    <i class="fab fa-whatsapp"></i>
 </a>
 <script>
-  function openVideo() {
+ function openVideo() {
   const modal = document.getElementById("videoModal");
   const video = document.getElementById("aboutVideo");
+
+  if (!modal || !video) return;
 
   modal.style.display = "flex";
   video.play();
@@ -397,21 +409,23 @@ function closeVideo() {
   const modal = document.getElementById("videoModal");
   const video = document.getElementById("aboutVideo");
 
+  if (!modal || !video) return;
+
   modal.style.display = "none";
   video.pause();
   video.currentTime = 0;
 }
-const whatsappBtn = document.querySelector(".floating-whatsapp");
+  const whatsappBtn = document.querySelector(".floating-whatsapp");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    whatsappBtn.style.opacity = "1";
-    whatsappBtn.style.transform = "translateY(0)";
-  } else {
-    whatsappBtn.style.opacity = "0";
-    whatsappBtn.style.transform = "translateY(20px)";
-  }
-});
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      whatsappBtn.style.opacity = "1";
+      whatsappBtn.style.transform = "translateY(0)";
+    } else {
+      whatsappBtn.style.opacity = "0";
+      whatsappBtn.style.transform = "translateY(20px)";
+    }
+  });
 </script>
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
