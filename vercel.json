@@ -1,0 +1,27 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/programs.html",
+      "destination": "/programs",
+      "permanent": true
+    },
+    {
+      "source": "/destinations.html",
+      "destination": "/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    }
+  ],
+  "trailingSlash": false
+}

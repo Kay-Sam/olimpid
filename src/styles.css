@@ -1,0 +1,57 @@
+#root,
+#react-content {
+  display: contents;
+}
+
+.header .logo .sitename {
+  margin: 0;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.image-box img {
+  height: auto;
+}
+
+.testimonials-home .swiper {
+  overflow: hidden;
+}
+
+.testimonials-home .swiper-wrapper {
+  display: flex;
+  transition: transform 600ms ease;
+  will-change: transform;
+}
+
+.testimonials-home .swiper-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.testimonials-home .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.testimonials-home .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
+  cursor: pointer;
+}
+
+.testimonials-home .swiper-pagination-bullet-active {
+  background: var(--accent-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-home .swiper-wrapper {
+    transition: none;
+  }
+}
